@@ -1,0 +1,331 @@
+.App {
+  min-height: 100vh;
+}
+
+/* Container constraints for better readability */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Content sections with proper spacing and max-width */
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .content-section {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-section {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .content-section {
+    max-width: 1280px;
+    padding: 0 2.5rem;
+  }
+}
+
+/* Hero section specific constraints */
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .hero-content {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    padding: 0 2rem;
+  }
+}
+
+/* Card grids with proper spacing */
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+/* Form containers */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Prevent content from stretching too wide on ultra-wide screens */
+@media (min-width: 1920px) {
+  .content-section,
+  .hero-content {
+    max-width: 1400px;
+  }
+}
+
+/* Page margin classes for consistent spacing */
+.page-container {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-container {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d90429;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8031e;
+}
+
+/* Dark theme scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #d90429;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #e53e3e;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.focus\:ring-red-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity));
+}
+
+/* Animation for hero slides */
+.hero-slide {
+  transition: opacity 1s ease-in-out;
+}
+
+/* Hover animations */
+.hover-lift:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
+
+/* Blood drop animation */
+@keyframes bloodDrop {
+  0% { transform: translateY(-10px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-blood-drop {
+  animation: bloodDrop 0.6s ease-out;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #d90429, #e53e3e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effects */
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(217, 4, 41, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Button pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Blood compatibility chart animations */
+.blood-group-card:hover .blood-type-badge {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Team member card animations */
+.team-card:hover .team-avatar {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Team member hover effects */
+.group:hover .team-contact-icons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-contact-icons {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .team-contact-icons {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Enhanced hover effects for team icons */
+.team-icon-link:hover {
+  background-color: #d90429 !important;
+  color: white !important;
+  transform: scale(1.1) !important;
+}
+
+/* Footer padding improvements */
+.footer-section {
+  padding: 1rem 0;
+}
+
+.footer-links {
+  margin-bottom: 1.5rem;
+}
+
+.footer-social-icons a:hover {
+  color: #d90429 !important;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-red-600 {
+    color: #dc2626;
+  }
+  
+  .bg-red-600 {
+    background-color: #dc2626;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
